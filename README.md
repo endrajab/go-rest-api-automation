@@ -1,1 +1,48 @@
 # go-rest-api-automation
+
+Project for QAE Take home test
+
+## Project Structure
+* `src/test/resouces/` directory:
+    * `features` directory: Contains all feature file with contains scenario (Writing using gherkin language Cucumber)
+* `wiresrc/test/java/com/endrajab/gorestapi` directory:
+    * `steps`directory: Contains all definitions of the steps for gherking language
+    * `model`directory: Contains all request and response model
+    * `common` directory: java class for initiate request API
+    * `wiremock-standalone-2.27.1.jar`: Wiremock jar file for Docker image
+* `README.md`: Project readme    
+
+
+## Requirement
+
+The following is list of project dependency.
+
+* [Maven](https://maven.apache.org/)
+
+
+## Installation
+
+1. Install Maven
+
+
+## Clone Test Repo
+  
+```
+git clone git@github.com:endrajab/go-rest-api-automation.git
+```
+
+    
+## How to Run Test Script
+  
+
+From Terminal change active directory to `go-rest-api-automatio`
+  
+```
+cd test_automation_api
+```
+
+Run newman with the following command format
+  
+```
+mvn clean verify
+```
