@@ -50,7 +50,7 @@ public class UserAPIDefinitions {
         createUserRequestModel.setStatus(status);
     }
 
-    @When("user access api {string}")
+    @When("user access create user api {string}")
     public void userAccessApi(String endpoint) {
         String body;
         HttpClient httpClient = new HttpClient(endpoint);
@@ -88,7 +88,7 @@ public class UserAPIDefinitions {
         response.then().body("data.status", Matchers.equalTo(status));
     }
 
-    @When("user access api get user detail")
+    @When("user access get user detail api")
     public void userAccessApiGetUserDetail() {
         HttpClient httpClient = new HttpClient("/public-api/users/" + userRegistered);
 
@@ -111,6 +111,15 @@ public class UserAPIDefinitions {
         httpClient.setRequestBody(body);
         RequestSpecification req = httpClient.BuildRequest().log().all();
         response = httpClient.PutMethod(req);
+        response.then().log().all();
+    }
+
+    @When("user access delete user api")
+    public void userAccessDeleteUserApi() {
+        HttpClient httpClient = new HttpClient("/public-api/users/" + userRegistered);
+
+        RequestSpecification req = httpClient.BuildRequest().log().all();
+        response = httpClient.DeleteMethod(req);
         response.then().log().all();
     }
 }

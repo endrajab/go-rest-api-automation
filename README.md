@@ -10,6 +10,7 @@ Project for QAE Take home test
     * `model`directory: Contains all request and response model
     * `common` directory: java class for initiate request API
     * `wiremock-standalone-2.27.1.jar`: Wiremock jar file for Docker image
+* `target` directory: Contains serenity report. This directory will show after run the test script.
 * `README.md`: Project readme    
 
 
@@ -46,3 +47,13 @@ Run newman with the following command format
 ```
 mvn clean verify
 ```
+
+## See Test Report
+
+After run the test script, it will generate report stored in directory:
+
+```
+target/site/serenity/
+```
+Open index.html file in browser
+

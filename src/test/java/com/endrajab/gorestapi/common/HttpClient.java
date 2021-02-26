@@ -46,4 +46,8 @@ public class HttpClient {
         request.body(this.requestBody);
         return request.put(this.endpoint);
     }
+
+    public Response DeleteMethod(RequestSpecification request) {
+        return request.delete(this.endpoint);
+    }
 }
