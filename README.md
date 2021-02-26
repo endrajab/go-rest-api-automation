@@ -45,7 +45,11 @@ cd test_automation_api
 Run newman with the following command format
   
 ```
-mvn clean verify
+mvn clean verify -DTOKEN=<token>
+```
+e.g
+```
+mvn clean verify -DTOKEN=186b676368adfb9bc8ddf8986395be24a673f9dcbc042b1544e9b2273a34c2a4
 ```
 
 ## See Test Report
