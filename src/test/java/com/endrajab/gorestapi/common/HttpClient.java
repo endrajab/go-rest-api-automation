@@ -6,6 +6,8 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.core.util.EnvironmentVariables;
+import net.thucydides.core.util.SystemEnvironmentVariables;
 
 import static io.restassured.config.RestAssuredConfig.config;
 
@@ -14,6 +16,9 @@ public class HttpClient {
     private String requestBody;
 
     private String endpoint;
+
+    EnvironmentVariables envs = SystemEnvironmentVariables.createEnvironmentVariables();
+    String token = envs.getProperty("TOKEN");
 
     public void setRequestBody(String requestBody) {
         this.requestBody = requestBody;
@@ -28,7 +33,7 @@ public class HttpClient {
         RequestSpecification request = SerenityRest.given();
         request.config(config().encoderConfig(EncoderConfig.encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false))).
                 header("Content-Type", "application/jason").
-                header("Authorization", "Bearer 186b676368adfb9bc8ddf8986395be24a673f9dcbc042b1544e9b2273a34c2a4").
+                header("Authorization", "Bearer " + token).
                 contentType(ContentType.JSON);
         return request;
     }
