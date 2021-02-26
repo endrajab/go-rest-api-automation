@@ -37,4 +37,13 @@ public class HttpClient {
         request.body(this.requestBody);
         return request.post(this.endpoint);
     }
+
+    public Response GetMethod(RequestSpecification request) {
+        return request.get(this.endpoint);
+    }
+
+    public Response PutMethod(RequestSpecification request) {
+        request.body(this.requestBody);
+        return request.put(this.endpoint);
+    }
 }
