@@ -36,10 +36,10 @@ git clone git@github.com:endrajab/go-rest-api-automation.git
 ## How to Run Test Script
   
 
-From Terminal change active directory to `go-rest-api-automatio`
+From Terminal change active directory to `go-rest-api-automation`
   
 ```
-cd test_automation_api
+cd go-rest-api-automation
 ```
 
 Run newman with the following command format
